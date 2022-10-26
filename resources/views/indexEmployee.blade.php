@@ -30,7 +30,7 @@
                 <td>{{ $employee->age }}</td>
                 <td>
                     <a class="btn btn-warning" href="editEmployee/{{ $employee->id }}">Edit</a>
-                    <a class="btn btn-danger" href="deleteEmployee/{{ $employee->id }}">Delete</a>
+                    <a class="btn btn-danger" href="deleteEmployee/{{ $employee->id }}" onclick="return confirm('Yakin ingin menghapus data ini?')">Delete</a>
                 </td>
             </tr>
             @endforeach

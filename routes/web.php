@@ -52,3 +52,8 @@ Route::patch(
     '/editEmployee/update/{id}', 
     [EmployeeController::class, 'update_employee']
 );
+
+Route::get(
+    '/deleteEmployee/{id}', 
+    [EmployeeController::class, 'delete_employee']
+);

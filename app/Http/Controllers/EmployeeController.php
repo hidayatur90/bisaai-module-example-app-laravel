@@ -86,6 +86,11 @@ class EmployeeController extends Controller
         return redirect('/');
     }
 
+    public function delete_employee($id)
+    {
+        Employees::where('id', $id)->delete();
+        return redirect('/');
+    }
 
 }
 
