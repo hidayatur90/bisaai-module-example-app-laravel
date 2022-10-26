@@ -14,19 +14,31 @@ use App\Http\Controllers\EmployeeController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+
+// Route::get('/employee', [
+//     EmployeeController::class, 'index'
+// ]);
+
+// Route::get('/looping', [
+//     EmployeeController::class, 'loopingExample'
+// ]);
+
+// Route::get('/gender', [
+//     EmployeeController::class, 'returnGenderValue'
+// ]);
+
+Route::get('/', [
+    EmployeeController::class, 'get_all_employees'
+]);
+
+Route::get('/addEmployee', function () {
+    return view('addEmployee');
 });
 
-Route::get('/employee', [
-    EmployeeController::class, 'index'
-]);
-
-Route::get('/looping', [
-    EmployeeController::class, 'loopingExample'
-]);
-
-Route::get('/gender', [
-    EmployeeController::class, 'returnGenderValue'
-]);
-
+Route::patch(
+    '/addEmployee/store', 
+    [EmployeeController::class, 'store_employee']
+);
