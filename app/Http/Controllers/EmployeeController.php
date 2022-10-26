@@ -3,33 +3,64 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Employees;
+use Illuminate\Support\Facades\DB;
 
 class EmployeeController extends Controller
 {
-    //index
-    public function index()
+    // //index
+    // public function index()
+    // {
+    //     return view('indexEmployee');
+    // }
+
+    // public function loopingExample()
+    // {
+    //     $datas = [];
+    //     for ($i=0; $i < 10; $i++) { 
+    //         array_push($datas,  $i);
+    //     }
+    //     return view('looping', ['datas' => $datas]);
+    // }
+
+    // public function returnGenderValue()
+    // {
+    //     // data 1
+    //     $males = ["Robby", "Jaya", "Kukun"];
+
+    //     // data 2
+    //     $females = ["Jenny", "Lisa", "Rose"];
+
+    //     return view('employeeGender', compact('males', 'females'));
+    // }
+
+    public function get_all_employees()
     {
-        return view('indexEmployee');
+        $employees = Employees::all();
+        return view('indexEmployee', ['employees' => $employees]);
     }
 
-    public function loopingExample()
+    public function store_employee(Request $request)
     {
-        $datas = [];
-        for ($i=0; $i < 10; $i++) { 
-            array_push($datas,  $i);
-        }
-        return view('looping', ['datas' => $datas]);
-    }
+        $this->validate($request,[
+    		'firstName' => 'required|string',
+    		'lastName' => 'required|string',
+    		'gender' => 'required|string',
+    		'age' => 'integer']
+        );
 
-    public function returnGenderValue()
-    {
-        // data 1
-        $males = ["Robby", "Jaya", "Kukun"];
+        Employees::create([
+            'firstName' => $request->firstName,
+            'lastName' => $request->lastName,
+            'gender' => $request->gender,
+            'age' => $request->age
+        ]);
 
-        // data 2
-        $females = ["Jenny", "Lisa", "Rose"];
+        return redirect('/');
 
-        return view('employeeGender', compact('males', 'females'));
-    }
+    }   
+
+    
+
 }
 
