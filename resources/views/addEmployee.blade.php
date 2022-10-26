@@ -46,7 +46,7 @@
                     <div class="col-sm-8 col-md-9 col-xl-10">
                         <select name="gender" class="form-control" placeholder="Gender Karyawan">
                             <option value="1">Laki-laki</option>
-                            <option value="2">Perempuan</option>
+                            <option value="2">Wanita</option>
                         </select>
                         @if ($errors->has('gender'))
                             <div class="text-danger">
@@ -73,7 +73,7 @@
                 <div class="row mb-3 justify-content-end mx-3 my-4">
                     <div class="col-sm-8 col-md-9 col-xl-10" style="text-align:end;">
                         <input type="submit" class="btn btn-primary mx-3" value="Tambah">
-                        <a type="button" class="btn btn-secondary border" href="/home">
+                        <a type="button" class="btn btn-secondary border" href="/">
                             Batal
                         </a>
                     </div>

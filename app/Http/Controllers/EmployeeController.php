@@ -60,7 +60,32 @@ class EmployeeController extends Controller
 
     }   
 
-    
+    public function get_employee_by_id($id)
+    {
+        $employee = Employees::find($id);
+        return view('editEmployee', ['employee' => $employee]);
+    }
+
+    public function update_employee(Request $request, $id)
+    {
+        $this->validate($request,[
+    		'firstName' => 'required|string',
+    		'lastName' => 'required|string',
+    		'gender' => 'required|string',
+    		'age' => 'integer']
+        );
+
+        Employees::where('id', $id)
+        ->update([
+            'firstName' => $request->firstName,
+            'lastName' => $request->lastName,
+            'gender' => $request->gender,
+            'age' => $request->age
+        ]);
+
+        return redirect('/');
+    }
+
 
 }
 
