@@ -17,6 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string('firstName')->length(50)->nullable(false);
             $table->string('lastName')->length(50)->nullable(false);
+            $table->enum('gender', ['Laki-laki', 'Wanita']);
             $table->bigInteger('age')->nullable(false);
             $table->timestamps();
         });

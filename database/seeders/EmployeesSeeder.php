@@ -17,18 +17,21 @@ class EmployeesSeeder extends Seeder
         \App\Models\Employees::create([
             'firstName' => 'Jimmy',
             'lastName' => 'Jhons',
+            'gender' => 'Laki-laki',
             'age' => 25
         ]);
 
         \App\Models\Employees::create([
             'firstName' => 'Amalia',
             'lastName' => 'Chalter',
+            'gender' => 'Wanita',
             'age' => 28
         ]);
 
         \App\Models\Employees::create([
             'firstName' => 'Alexander',
             'lastName' => 'Sumargo',
+            'gender' => 'Laki-laki',
             'age' => 22
         ]);
     }
