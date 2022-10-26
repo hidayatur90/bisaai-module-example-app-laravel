@@ -13,11 +13,7 @@
 </head>
 
 <body>
-    <div id="app">
-        <main class="py-0">
-            @yield('content')
-        </main>
-    </div>
+    @yield('content')
 </body>
 
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
@@ -28,3 +24,6 @@
 </script>
 
 </html>
+
+
+
