@@ -17,3 +17,4 @@ use App\Http\Controllers\EmployeeController;
 Route::get('/', [
     EmployeeController::class, 'get_all_employees'
 ]);
+
