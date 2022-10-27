@@ -21,3 +21,9 @@ Route::get('/', [
 Route::get('/addEmployee', function () {
     return view('addEmployee');
 });
+
+Route::patch(
+    '/addEmployee/store', 
+    [EmployeeController::class, 'store_employee']
+);
+
