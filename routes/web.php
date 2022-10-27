@@ -27,3 +27,17 @@ Route::patch(
     [EmployeeController::class, 'store_employee']
 );
 
+Route::get(
+    '/editEmployee/{id}', 
+    [EmployeeController::class, 'get_employee_by_id']
+);
+
+Route::patch(
+    '/editEmployee/update/{id}', 
+    [EmployeeController::class, 'update_employee']
+);
+
+Route::get(
+    '/deleteEmployee/{id}', 
+    [EmployeeController::class, 'delete_employee']
+);
