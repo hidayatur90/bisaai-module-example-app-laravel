@@ -18,3 +18,6 @@ Route::get('/', [
     EmployeeController::class, 'get_all_employees'
 ]);
 
+Route::get('/addEmployee', function () {
+    return view('addEmployee');
+});
