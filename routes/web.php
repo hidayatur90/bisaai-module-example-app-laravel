@@ -41,3 +41,11 @@ Route::get(
     '/deleteEmployee/{id}', 
     [EmployeeController::class, 'delete_employee']
 );
+
+Route::get($uri, $callback);
+Route::post($uri, $callback);
+Route::put($uri, $callback);
+Route::patch($uri, $callback);
+Route::delete($uri, $callback);
+Route::options($uri, $callback);
+
